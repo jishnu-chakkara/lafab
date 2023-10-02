@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <!-- Tailwind CSS CDN (Note: You should link to a local installation for production) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="./images/logo.png" />
+
+    <title>laundry fabrica</title>
+</head>
+<body>
+    lass="bg-white text-white">
+  <!-- Navigation Bar -->
+  <nav class="p-2 w-full backdrop-blur backdrop-opacity-90 transition bg-opacity-50 bg-center bg-cover">
+    <div class="flex items-center justify-between h-12">
+      <!-- Logo -->
+      <img src="./images/logo.png" class="h-24 w-24 p-2" alt="logo" />
+      <!-- Hamburger Icon (visible on small screens) -->
+      <div id="menu-icon" class="block md:hidden lg:hidden cursor-pointer text-gray-900">
+        <i class="bx bx-menu-alt-right text-4xl"></i>
+      </div>
+      <!-- Navigation Links (visible on larger screens) -->
+      <div
+        class="hidden space-x-5 font-bold md:flex text-gray-900 mr-4 transition duration-500 {{ scroll ? 'navbar-scroll' : '' }}">
+        <!-- Links with animated underline on hover -->
+        <a href="#" class="group inline-block relative">
+          <span class="font-bold">Home</span>
+          <span
+            class="absolute bottom-0 left-0 w-full h-0.5 bg-[#e200dc] transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+        </a>
+        <a href="#about" class="group inline-block relative">
+          <span class="font-bold">About</span>
+          <span
+            class="absolute bottom-0 left-0 w-full h-0.5 bg-[#e200dc] transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+        </a>
+        <a href="#" class="group inline-block relative">
+          <span class="font-bold">Service</span>
+          <span
+            class="absolute bottom-0 left-0 w-full h-0.5 bg-[#e200dc] transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+        </a>
+        <a href="#" class="group inline-block relative">
+          <span class="font-bold">Gallery</span>
+          <span
+            class="absolute bottom-0 left-0 w-full h-0.5 bg-[#e200dc] transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+        </a>
+        <a href="#" class="group inline-block relative">
+          <span class="font-bold">Contact</span>
+          <span
+            class="absolute bottom-0 left-0 w-full h-0.5 bg-[#e200dc] transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+        </a>
+        <!-- Other navigation links -->
+      </div>
+    </div>
+  </nav>
+    
+</body>
+</html>
