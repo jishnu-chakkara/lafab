@@ -76,6 +76,99 @@
       </button>
     </div>
   </div>
+
+
+
+
+
+
+
+
+
+  <!-- js -->
+  <script>
+    const menuIcon = document.getElementById("menu-icon");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const closeMenuButton = document.getElementById("close-menu");
+    let scroll = false;
+
+    // Toggle mobile menu visibility
+    menuIcon.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // Hide mobile menu on close button click
+    closeMenuButton.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+    });
+
+    // Update navigation bar on scroll
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 0) {
+        scroll = true;
+      } else {
+        scroll = false;
+      }
+
+      const navbar = document.querySelector(".navbar-scroll");
+      if (scroll) {
+        navbar.classList.add(
+          "bg-white",
+          "backdrop-blur",
+          "backdrop-opacity-90"
+        );
+      } else {
+        navbar.classList.remove(
+          "bg-white",
+          "backdrop-blur",
+          "backdrop-opacity-90"
+        );
+      }
+    });
+
+    // @dev auto sliding js
+
+    let slides = document.getElementsByClassName("slider__slide");
+    let navlinks = document.getElementsByClassName("slider__navlink");
+    let currentSlide = 0;
+
+    document
+      .getElementById("nav-button--next")
+      .addEventListener("click", () => {
+        changeSlide(currentSlide + 1);
+      });
+    document
+      .getElementById("nav-button--prev")
+      .addEventListener("click", () => {
+        changeSlide(currentSlide - 1);
+      });
+
+    function changeSlide(moveTo) {
+      if (moveTo >= slides.length) {
+        moveTo = 0;
+      }
+      if (moveTo < 0) {
+        moveTo = slides.length - 1;
+      }
+
+      slides[currentSlide].classList.toggle("active");
+      navlinks[currentSlide].classList.toggle("active");
+      slides[moveTo].classList.toggle("active");
+      navlinks[moveTo].classList.toggle("active");
+
+      currentSlide = moveTo;
+    }
+
+    document
+      .querySelectorAll(".slider__navlink")
+      .forEach((bullet, bulletIndex) => {
+        bullet.addEventListener("click", () => {
+          if (currentSlide !== bulletIndex) {
+            changeSlide(bulletIndex);
+          }
+        });
+      });
+  </script>
     
 </body>
 </html>
